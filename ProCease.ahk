@@ -47,7 +47,7 @@ TAB_RES                := "Resolution"
 TAB_TCOM               := "Test Comments"
 
 ; ProCease icon.  Change this to whatever icon you want to use or comment it out for default AutoHotKey icon
-Menu, Tray, Icon, Plog.ico
+Menu, Tray, Icon, ProCease.ico
 
 ;=============================================================================================================================
 ; END Customizable Values Section
