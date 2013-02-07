@@ -1,0 +1,13 @@
+-- WSAW1400 Apr '13 -----------------------
+BL824F	[artfXXXXX]	Optimize Collaborate Screen
+
+-- WSAW1380 Feb '13 -----------------------
+BL981	BL981	Welcome center easy click buttons
+BL1124	BL1124	Edit email ability
+BL1107	BL1107	Turn off auto zoom
+BL1191	BL1191	Read URL locale
+.
+.
+.
+e.g., 
+ShortlStoryID	StoryID_used	Description
