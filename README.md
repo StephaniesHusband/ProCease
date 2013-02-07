@@ -1,6 +1,6 @@
 # FedEx ProCease
 
-ProCease is a collection of [AutoHotkey](www.autohotkey.com) macros/scripts to help with "CEASING the burden of PROCESS" (hence the new name).
+ProCease is a collection of [AutoHotkey](http://www.autohotkey.com) macros/scripts to help with "CEASING the burden of PROCESS" (hence the new name).
 
 ## Instructions
 
