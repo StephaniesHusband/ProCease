@@ -23,6 +23,7 @@ be made and their descriptions.
 
 ####Parameter Type Explanation
 AEV - AutoHotkey Expression Variable _(e.g., THIS_VARIABLE) (no percentage signs necessary)_
+
 TV - AutoHotkey Tradtional Variable _(e.g., %SOME_VARIABLE%)_
 - - - 
 ### WaitFor(waitForMe)
