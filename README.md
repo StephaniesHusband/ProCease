@@ -110,28 +110,30 @@ team = Root cause team (AEV). Use the TEAM_ROOT_CAUSE constant or any other valu
 Nothing
 
 ### SetResolution(res)
-description
+Set the resolution to the value in RESOLUTION as a template for resolving defects.
 >####Parameters
-None
+res = Resolution template value (AEV).  Can use RESOLUTION constant or any other value
 >####Returns
 Nothing
 
-### FindDefect(defectNum)
-description
+### FindDefect(id)
+Find the given defect id in the QC Defect system. Requires that the QC Defect system be open.
 >####Parameters
-None
+id = Defect ID (AEV).
 >####Returns
 Nothing
 
 ### FixDefect(pcv, ttc, atv)
-description
+Fix the given defect
 >####Parameters
-None
+pcv = Planned closing version (AEV) - can use the VER_PLANNED_CLOSING constant or any other value.
+ttc = Target Test Cycle (AEV) - can use the TARGET_TEST_CYCLE constant or any other value.
+atv = Assigned To Version (AEV) - can use the VER_ASSIGNED_TO constant or any other value.
 >####Returns
 Nothing
 
 ### LaunchDefectActionWindow()
-description
+Launch the Defect Action window 
 >####Parameters
 None
 >####Returns
@@ -155,12 +157,5 @@ Trimmed contents of the clipboard
 Select everything with a Ctrl-A in whatever context the focus is in at the time of calling.
 >####Parameters
 None
->####Returns
-Nothing
-
-### FindDefect(id)
-Find the given defect id in the QC Defect system. Requires that the QC Defect system be open.
->####Parameters
-id = Defect ID (AEV).
 >####Returns
 Nothing
