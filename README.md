@@ -26,10 +26,10 @@ AEV - AutoHotkey Expression Variable _(e.g., THIS_VARIABLE) (no percentage signs
 
 TV - AutoHotkey Tradtional Variable _(e.g., %SOME_VARIABLE%)_
 - - - 
-### WaitFor(waitForMe)
-Wait for and activate the given window.
+### ClickOk()
+Clicks the OK button in the QC Defect Details dialog.
 >####Parameters
-waitForMe = title of window to wait for (AEV)
+None
 >####Returns
 Nothing
 
@@ -39,83 +39,6 @@ Capture the defect number out of the QC defect dialog and into the Clipboard var
 None
 >####Returns
 Defect Number
-
-### GoToTab(tabName)
-Select the given tab
->####Parameters
-tabName = Tab Name to go to (AEV). Use the TAB_* constants or any other value.
->####Returns
-Nothing
-
-### ClickOk()
-Clicks the OK button in the QC Defect Details dialog.
->####Parameters
-None
->####Returns
-Nothing
-
-### SetAssignedTo(id)
-Set the assigned to value to the employee id given.
->####Parameters
-id = Employee ID to assign the defect to (AEV)
->####Returns
-Nothing
-
-### SetTeamAssigned(team)
-Set the team assigned to the team value given.
->####Parameters
-team = Team to assign the defect to (AEV). Use the TEAM_* constants or any other value.
->####Returns
-Nothing
-
-### SetDefectStatus(status)
-Set the defect to the given status. 
->####Parameters
-status = Defect status. (AEV) Use the STATUS_* constants or any other value.
->####Returns
-Nothing
-
-### SetAssignedToVersion(ver)
-Sets the Assigned To Version.
->####Parameters
-ver = Software version to assign the defect to. (AEV) Use the VER_ASSIGNED_TO constants or any other value.
->####Returns
-Nothing
-
-### SetPlannedClosingVersion(ver)
-Set the Planned Closing Version that the defect is fixed in.
->####Parameters
-ver = Planned Closing version. (AEV) Use the VER_PLANNED_CLOSING constant or any other value.
->####Returns
-Nothing
-
-### SetTargetTestCycle(cycle)
-Sets the target test cycle (i.e., Marketing Sprint #)
->####Parameters
-cycle = Target test cycle (AEV)
->####Returns
-Nothing
-
-### SetDefectType(type)
-Set the defect type
->####Parameters
-type = Defect Type. use the DEFECT_TYPE constant or any other value.
->####Returns
-Nothing
-
-### SetRootCauseTeam(team)
-Set the root cause team
->####Parameters
-team = Root cause team (AEV). Use the TEAM_ROOT_CAUSE constant or any other value.
->####Returns
-Nothing
-
-### SetResolution(res)
-Set the resolution to the value in RESOLUTION as a template for resolving defects.
->####Parameters
-res = Resolution template value (AEV).  Can use RESOLUTION constant or any other value
->####Returns
-Nothing
 
 ### FindDefect(id)
 Find the given defect id in the QC Defect system. Requires that the QC Defect system be open.
@@ -133,10 +56,17 @@ atv = Assigned To Version (AEV) - can use the VER_ASSIGNED_TO constant or any ot
 >####Returns
 Nothing
 
-### LaunchDefectActionWindow()
-Launch the Defect Action window 
+### GetClipboard()
+Get the contents of the clipboard and trim head and trailing spaces off the value.
 >####Parameters
 None
+>####Returns
+Trimmed contents of the clipboard
+
+### GoToTab(tabName)
+Select the given tab
+>####Parameters
+tabName = Tab Name to go to (AEV). Use the TAB_* constants or any other value.
 >####Returns
 Nothing
 
@@ -147,16 +77,86 @@ None
 >####Returns
 Nothing
 
-### GetClipboard()
-Get the contents of the clipboard and trim head and trailing spaces off the value.
+### LaunchDefectActionWindow()
+Launch the Defect Action window
 >####Parameters
 None
 >####Returns
-Trimmed contents of the clipboard
+Nothing
 
 ### SelectAll()
 Select everything with a Ctrl-A in whatever context the focus is in at the time of calling.
 >####Parameters
 None
+>####Returns
+Nothing
+
+### SetAssignedTo(id)
+Set the assigned to value to the employee id given.
+>####Parameters
+id = Employee ID to assign the defect to (AEV)
+>####Returns
+Nothing
+
+### SetAssignedToVersion(ver)
+Sets the Assigned To Version.
+>####Parameters
+ver = Software version to assign the defect to. (AEV) Use the VER_ASSIGNED_TO constants or any other value.
+>####Returns
+Nothing
+
+### SetDefectStatus(status)
+Set the defect to the given status.
+>####Parameters
+status = Defect status. (AEV) Use the STATUS_* constants or any other value.
+>####Returns
+Nothing
+
+### SetDefectType(type)
+Set the defect type
+>####Parameters
+type = Defect Type. use the DEFECT_TYPE constant or any other value.
+>####Returns
+Nothing
+
+### SetPlannedClosingVersion(ver)
+Set the Planned Closing Version that the defect is fixed in.
+>####Parameters
+ver = Planned Closing version. (AEV) Use the VER_PLANNED_CLOSING constant or any other value.
+>####Returns
+Nothing
+
+### SetResolution(res)
+Set the resolution to the value in RESOLUTION as a template for resolving defects.
+>####Parameters
+res = Resolution template value (AEV).  Can use RESOLUTION constant or any other value
+>####Returns
+Nothing
+
+### SetRootCauseTeam(team)
+Set the root cause team
+>####Parameters
+team = Root cause team (AEV). Use the TEAM_ROOT_CAUSE constant or any other value.
+>####Returns
+Nothing
+
+### SetTargetTestCycle(cycle)
+Sets the target test cycle (i.e., Marketing Sprint #)
+>####Parameters
+cycle = Target test cycle (AEV)
+>####Returns
+Nothing
+
+### SetTeamAssigned(team)
+Set the team assigned to the team value given.
+>####Parameters
+team = Team to assign the defect to (AEV). Use the TEAM_* constants or any other value.
+>####Returns
+Nothing
+
+### WaitFor(waitForMe)
+Wait for and activate the given window.
+>####Parameters
+waitForMe = title of window to wait for (AEV)
 >####Returns
 Nothing
