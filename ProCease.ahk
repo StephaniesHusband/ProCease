@@ -8,9 +8,13 @@
 QC_TITLE                = HP Application Lifecycle Management ; for stand-alone QC app
 ;QC_TITLE               = HP ALM - Quality Center 11.00       ; for browser QC app
 
-VER_ASSIGNED_TO        := "WSAW1380"                       ; changes per release
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.L6.02   ; changes per sprint/build
-TARGET_TEST_CYCLE      := "Sprint 4"                       ; changes per sprint
+; The version the defect is assigned to and being fixed for. It will change per release.
+VER_ASSIGNED_TO        := "WSAW1380"
+; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.L6.02
+; Target Test Cycle is the marketing version of the current sprint (it differs from the dev sprint #). Changes per sprint.
+TARGET_TEST_CYCLE      := "Sprint 4"
+; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "QC-CD "
 
 ; How long to wait in between execution steps (in milliseconds)
@@ -376,7 +380,7 @@ LaunchDefectActionWindow()
    H := H - 32
 
    ; Show the artifact picker window
-   Gui, Show, x%X% y%Y% h%H%, Defect Action
+   Gui, Show, x%X% y%Y% h%H%, ProCease - Defect Action
 
    ; Gui gone, return from this function
    Return
@@ -471,7 +475,7 @@ LaunchArtifactPicker()
    WinGetPos, X,Y,W,H, %POP_COMMIT%
 
    ; Show the artifact picker window
-   Gui, Show, x%X% y%Y% w%W% h%H%, Artifact Picker
+   Gui, Show, x%X% y%Y% w%W% h%H%, ProCease - Artifact Picker
 
    ; Gui gone, return from this function
    Return
