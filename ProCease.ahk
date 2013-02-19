@@ -6,14 +6,17 @@
 
 ; Set the appropriate app title
 QC_TITLE                = HP Application Lifecycle Management ; for stand-alone QC app
-;QC_TITLE               = HP ALM - Quality Center 11.00       ; for browser QC app
+;QC_TITLE               = HP ALM - Quality Center 11.00       ; for browser QC Approvals
+
+; This will be included in the commit
+DEV_NAME               := "Scott"
 
 ; The version the defect is assigned to and being fixed for. It will change per release.
-VER_ASSIGNED_TO        := "WSAW1380"
+VER_ASSIGNED_TO        := "WSAW1400"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.L6.02
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S1.L3.01
 ; Target Test Cycle is the marketing version of the current sprint (it differs from the dev sprint #). Changes per sprint.
-TARGET_TEST_CYCLE      := "Sprint 4"
+TARGET_TEST_CYCLE      := "Sprint 1"
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "QC-CD "
 
@@ -502,7 +505,7 @@ LaunchArtifactPicker()
       WaitFor(POP_COMMIT)
 
       SelectAll()
-      SendInput, %ArtData2%{SPACE}
+      SendInput, %ArtData2%{SPACE}%DEV_NAME% - %ArtData1% -{SPACE}
    Return
 
    ;----------------------------------------------------------
