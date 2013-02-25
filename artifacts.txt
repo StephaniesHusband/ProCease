@@ -1,8 +1,1 @@
--- WSAW1400 Apr '13 -----------------------
-BL824F	[artf699649]	ITG 150121: Optimize Collaborate Screen
 Defects	[artf679572]	ITG 146769: FY13 Production Maintenance
-.
-.
-.
-e.g., 
-ShortlStoryID	StoryID_used	Description
