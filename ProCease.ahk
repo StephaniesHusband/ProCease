@@ -5,8 +5,8 @@
 ;=============================================================================================================================
 
 ; Set the appropriate app title
-QC_TITLE                = HP Application Lifecycle Management ; for stand-alone QC app
-;QC_TITLE               = HP ALM - Quality Center 11.00       ; for browser QC Approvals
+QC_TITLE               := "HP Application Lifecycle Management" ; for stand-alone QC app
+;QC_TITLE              := "HP ALM - Quality Center 11.00"       ; for browser QC Approvals
 
 ; This will be included in the commit
 DEV_NAME               := "Scott"
@@ -14,9 +14,9 @@ DEV_NAME               := "Scott"
 ; The version the defect is assigned to and being fixed for. It will change per release.
 VER_ASSIGNED_TO        := "WSAW1400"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S2.L3.01
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.L6.01
 ; Target Test Cycle is the marketing version of the current sprint (it differs from the dev sprint #). Changes per sprint.
-TARGET_TEST_CYCLE      := "Sprint 2"
+TARGET_TEST_CYCLE      := "Sprint 3"
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "QC-CD "
 
@@ -306,7 +306,7 @@ FindDefect(defectNum)
 {
    Global
 
-   WaitFor(%QC_TITLE%)
+   WaitFor(QC_TITLE)
 
    MouseClick, left, 106, 190
    Send, !g
@@ -410,6 +410,8 @@ LaunchDefectActionWindow()
       SetTeamAssigned(EmpData3)
       SetAssignedTo(EmpData2)
 
+      Gui, Destroy
+
       ClickOk()
    Return
 
@@ -418,9 +420,10 @@ LaunchDefectActionWindow()
    ;----------------------
    ButtonMarkAsFixed:
       Gui, Destroy
+
       WaitFor(POP_DEF_DETAILS)
 
-      FixDefect(VER_PLANNED_CLOSING, TARGET_TEST_CYCLE, VER_ASSIGNED_TO)
+      FixDefect(PlannedClosingVersion, TARGET_TEST_CYCLE, VER_ASSIGNED_TO)
    Return
 
    ;---------------
