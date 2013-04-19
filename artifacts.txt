@@ -1,2 +1,4 @@
-Defects	[artf679572]	ITG 146769: FY13 Production Maintenance
-Motion Hibernate	[artf708518]	ITG 147439: Motion Hibernate
+DEFECTS	[artf679572]	ITG 146769: FY13 Production Maintenance
+TRANSLATIONS	[artf679572]	ITG 155087: Translations Related
+BL1088	[artf731890] 	ITG 142949: Opt out of Journey invite emails
+BL1091	[artf731900]	ITG 142943: Take action from Journey Timeline
