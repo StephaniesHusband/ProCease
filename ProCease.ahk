@@ -12,9 +12,11 @@ QC_TITLE               := "HP Application Lifecycle Management" ; for stand-alon
 DEV_NAME               := "Scott"
 
 ; The version the defect is assigned to and being fixed for. It will change per release.
-VER_ASSIGNED_TO        := "WSAW1400"
+VER_ASSIGNED_TO        := "WSAW1420"
+; Target release Value
+TARGET_RELEASE         := "DL1306 Jun"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.L6.01
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S2.L3.01
 ; Target Test Cycle is the marketing version of the current sprint (it differs from the dev sprint #). Changes per sprint.
 TARGET_TEST_CYCLE      := "Sprint 3"
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
@@ -39,7 +41,7 @@ STATUS_FIXED           := "Fixed"
 STATUS_RETURNED        := "Returned"
 
 DEFECT_TYPE            := "Software:Code"
-RESOLUTION             := "UT:{SPACE}Y{RETURN}UT Passed:{SPACE}Y{RETURN}Cause:{SPACE}{RETURN}Resolution:{SPACE}"
+RESOLUTION             := "UT:{SPACE}Y{RETURN}UT Passed:{SPACE}Y{RETURN}RootCause:{SPACE}{RETURN}Resolution:{SPACE}"
 
 ; These are titles of windows that we need to watch for and take action on
 POP_DEF_DETAILS        := "Defect Details"
@@ -207,6 +209,21 @@ SetDefectStatus(status)
 ;-----------------------------------------------------------------------------------------------------------------------------
 ; Function
 ;-----------------------------------------------------------------------------------------------------------------------------
+SetTargetRelease(release)
+{
+   Global
+
+   WaitFor(POP_DEF_DETAILS)
+   GoToTab(TAB_DET)
+   SendInput, {TAB 11}
+   SelectAll()
+   SendInput, %release%
+   Sleep, STEP_SLEEP
+}
+
+;-----------------------------------------------------------------------------------------------------------------------------
+; Function
+;-----------------------------------------------------------------------------------------------------------------------------
 SetAssignedToVersion(ver)
 {
    Global
@@ -282,6 +299,21 @@ SetRootCauseTeam(team)
 ;-----------------------------------------------------------------------------------------------------------------------------
 ; Function
 ;-----------------------------------------------------------------------------------------------------------------------------
+SetRootCauseDetails(cause)
+{
+   Global
+
+   WaitFor(POP_DEF_DETAILS)
+   GoToTab(TAB_CINFO)
+   SendInput, {TAB 10}
+   SelectAll()
+   SendInput, %cause%
+   Sleep, STEP_SLEEP
+}
+
+;-----------------------------------------------------------------------------------------------------------------------------
+; Function
+;-----------------------------------------------------------------------------------------------------------------------------
 SetResolution(res)
 {
    Global
@@ -335,15 +367,17 @@ FixDefect(pcv, ttc, atv)
 
    ; Details tab
    SetDefectStatus(STATUS_FIXED)
-   SetAssignedToVersion(atv)
+   SetTargetRelease(TARGET_RELEASE)
+   ;SetAssignedToVersion(atv)
 
    ; Additional Info tab
-   SetTargetTestCycle(ttc)
+   ;SetTargetTestCycle(ttc)
    SetPlannedClosingVersion(pcv)
 
    ; Closing Info tab
    SetDefectType(DEFECT_TYPE)
    SetRootCauseTeam(TEAM_ROOT_CAUSE)
+   SetRootCauseDetails("Code breakage")
 
    ; Resolution tab
    SetResolution(RESOLUTION)
@@ -403,14 +437,13 @@ LaunchDefectActionWindow()
    ; Fall through - treat doubleclick as reassign
    ;---------------------------------------------
    ButtonReassign:
-      GuiControlGet, lbEmpNums ; retrieve the listbox's current selection
+      Gui, Submit
+      Gui, Destroy
 
       StringSplit, EmpData, lbEmpNums, %A_Tab%
 
       SetTeamAssigned(EmpData3)
       SetAssignedTo(EmpData2)
-
-      Gui, Destroy
 
       ClickOk()
    Return
@@ -419,6 +452,7 @@ LaunchDefectActionWindow()
    ; Mark As Fixed handler
    ;----------------------
    ButtonMarkAsFixed:
+      Gui, Submit
       Gui, Destroy
 
       WaitFor(POP_DEF_DETAILS)
@@ -430,19 +464,22 @@ LaunchDefectActionWindow()
    ; Return handler
    ;---------------
    ButtonReturnIt:
+      Gui, Submit
+      Gui, Destroy
+
       SetDefectStatus(%STATUS_RETURNED%)
       SetTeamAssigned(TEAM_RETURNED)
+
       ClickOk()
-      Gui, Destroy
    Return
 
    ;------------------
    ; Close all handler
    ;------------------
    ButtonCloseAll:
+      Gui, Destroy
       ClickOk()
    Return
-
 }
 
 ;-----------------------------------------------------------------------------------------------------------------------------
