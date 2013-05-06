@@ -8,12 +8,12 @@ GENRELEASE	[artf732658]	ITG 155087: Non-GDP stuff
 ; If you have a defect for a story that was in a non-released sprint, check it
 ; in on that sprint story's ITG/artifact below.
 ;--------------------------------------------------------------------------------
-DEFECTS	[artf732658]	ITG 146769: ONLY Production DEFECTS
+DEFECTS	[artf732658]	ITG 146769: ONLY CURRENT PRODUCTION DEFECTS
 ;--------------------------------------------------------------------------------
 ; This is any valid artifact for any story in the sprint. Use this for actual
 ; translations work/check-ins (e.g., application of translation submissions).
 ;--------------------------------------------------------------------------------
-TRANSLATIONS	[artf741221]	ITG 144851: Translations working
+TRANSLATIONS	[artf741221]	ITG 144851: Translations work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on for WSAW1420.S2
 ;--------------------------------------------------------------------------------
