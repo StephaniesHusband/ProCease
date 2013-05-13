@@ -555,6 +555,19 @@ LaunchArtifactPicker()
       SendInput, %Artifact%{SPACE}%DEV_NAME% - %Story% -{SPACE}
    Return
 
+   ButtonSelect:
+      rowNum := LV_GetNext(1, "F")
+      LV_GetText(Story, rowNum, 1)
+      LV_GetText(Artifact, rowNum, 2)
+
+      Gui, Destroy
+
+      WaitFor(POP_COMMIT)
+
+      SelectAll()
+      SendInput, %Artifact%{SPACE}%DEV_NAME% - %Story% -{SPACE}
+   Return
+
    ;----------------------------------------------------------
    ; Handle the closing of the defect window or hitting escape
    ;----------------------------------------------------------
