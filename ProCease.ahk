@@ -16,9 +16,9 @@ VER_ASSIGNED_TO        := "WSAW1440"
 ; Target release Value
 TARGET_RELEASE         := "DL1306 Jun"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.L6.01
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S1.L3.01
 ; Target Test Cycle is the marketing version of the current sprint (it differs from the dev sprint #). Changes per sprint.
-TARGET_TEST_CYCLE      := "Sprint 3"
+TARGET_TEST_CYCLE      := "Sprint 1"
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "QC-CD "
 
