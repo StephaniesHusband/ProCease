@@ -10,17 +10,19 @@ GENRELEASE	[artf732658]	ITG 156157: WSAW1440 Non-GDP stuff
 ;--------------------------------------------------------------------------------
 DEFECTS	[artf732658]	ITG 156144: FY14 JTracy (CURRENT PRODUCTION DEFECTS)
 ;--------------------------------------------------------------------------------
-; This is the same as the General Release artifact.
+; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf732658]	ITG 156157: Translations submission work.
-;--------------------------------------------------------------------------------
-; This is any valid artifact for any story in the sprint. Use this for actual
-; translations work/check-ins (e.g., application of translation submissions).
-;--------------------------------------------------------------------------------
-TRANS-APPLY	[artf741221]	ITG 147438: Translations work
+TRANS-SUBMIT	[artf769945]	Translations submission work.
+TRANS-APPLY	[artf769945]	Translations application work.
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on for WSAW1440
 ;--------------------------------------------------------------------------------
+--------------	------------	-1440.S2------------------------------------------
+BL1039	[artf769945]	ITG 147438: Special service section visibility
+BL1212	[artf769949]	ITG 142945: Modify checkbox dependencies
+BL1068	[artf769956]	ITG 142945: Required Fields for new location
+BL1234	[artf769959]	ITG 141739: Reporting verbiage Updates
+BL927	[artf771023]	ITG 142943: Journey sort save per user
 --------------	------------	-1440.S1------------------------------------------
 BL1249	[artf764203]	ITG 147438: Journey Type and Reporting Interval
 BL1264	[artf764204]	ITG 147439: Support Deep Frozen Temp Probe
