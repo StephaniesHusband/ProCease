@@ -17,6 +17,10 @@ TRANS-APPLY	[artf769945]	Translations application work.
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on for WSAW1440
 ;--------------------------------------------------------------------------------
+--------------	------------	-1440.S3------------------------------------------
+BL1104	[artf779027]	ITG 144851: Table sorting & structuring throughout app
+BL527	[artf779031]	ITG 141739: Active participants audit
+BL1137	[artf779033]	ITG 142949: FCC Form
 --------------	------------	-1440.S2------------------------------------------
 BL1039	[artf769945]	ITG 147438: Special service section visibility
 BL1212	[artf769949]	ITG 142945: Modify checkbox dependencies
