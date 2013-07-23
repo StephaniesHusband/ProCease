@@ -1,26 +1,23 @@
 ;--------------------------------------------------------------------------------
-; This is ONLY for non-code-impacting stuff (e.g., moving translations from
-; new/modified section to current submission section).
-;--------------------------------------------------------------------------------
-GENRELEASE	[artf732658]	ITG 156157: WSAW1440 Non-GDP stuff
-;--------------------------------------------------------------------------------
-; This is ONLY for defects that are already in production (from prior release).
+; This is ONLY for defects that are already in production (from prior release)
+; AND that you don't have an open tracker for.
+;
 ; If you have a defect for a story that was in a non-released sprint, check it
 ; in on that sprint story's ITG/artifact below.
 ;--------------------------------------------------------------------------------
-DEFECTS	[artf732658]	ITG 156144: FY14 JTracy (CURRENT PRODUCTION DEFECTS)
+DEFECTS	[artf764323]	ITG 156144: FY14 JTracy (CURRENT PRODUCTION DEFECTS)
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf769945]	Translations submission work.
-TRANS-APPLY	[artf769945]	Translations application work.
+TRANS-SUBMIT	[artf779027]	Translations submission work
+TRANS-APPLY	[artf779027]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on for WSAW1440
 ;--------------------------------------------------------------------------------
 --------------	------------	-1440.S3------------------------------------------
 BL1104	[artf779027]	ITG 144851: Table sorting & structuring throughout app
-BL527	[artf779031]	ITG 141739: Active participants audit
-BL1137	[artf779033]	ITG 142949: FCC Form
+BL527	[artf779031]	ITG 141739: Active participants audit (RENEE)
+BL1137	[artf779033]	ITG 142949: FCC Form (RENEE)
 --------------	------------	-1440.S2------------------------------------------
 BL1039	[artf769945]	ITG 147438: Special service section visibility
 BL1212	[artf769949]	ITG 142945: Modify checkbox dependencies
