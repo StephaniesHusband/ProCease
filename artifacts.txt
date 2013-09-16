@@ -10,11 +10,13 @@ DEFECTS	[artf787988]	ITG 156144: FY14 JTracy Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf794537]	Translations submission work
-TRANS-APPLY	[artf794537]	Translations application work
+TRANS-SUBMIT	[artf811809]	Translations submission work
+TRANS-APPLY	[artf811809]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on for WSAW1460
 ;--------------------------------------------------------------------------------
+--------------	------------	-1460.S3------------------------------------------
+BL1270	[artf811809]	ITG 142942: Edit User Capabilities
 --------------	------------	-1460.S2------------------------------------------
 BL1230	[artf794537]	ITG 142943: Current Location Column
 BL1175B	[artf805901]	ITG 148893: Link to Commercial Tracking Data - Pt 2
