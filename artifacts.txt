@@ -6,7 +6,6 @@
 ; in on that sprint story's ITG/artifact below.
 ;--------------------------------------------------------------------------------
 DEFECTS	[artf787988]	ITG 156144: FY14 JTracy Production Maintenance
-DEFECTS	[artf787988]	ITG 156144: FY14 JTracy Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
@@ -18,33 +17,33 @@ TRANS-APPLY	[artf811809]	Translations application work
 --------------	------------	-1460.S3------------------------------------------
 BL1270	[artf811809]	ITG 142942: Edit User Capabilities
 --------------	------------	-1460.S2------------------------------------------
-BL1230	[artf794537]	ITG 142943: Current Location Column
-BL1175B	[artf805901]	ITG 148893: Link to Commercial Tracking Data - Pt 2
+BL1230	[artf794537]	ITG 142943: Current Location Column*
+BL1175B	[artf805901]	ITG 148893: Link to Commercial Tracking Data - Pt 2*
 --------------	------------	-1460.S1------------------------------------------
-BL1148	[artf794486]	ITG 142940: Improve filters in Collaborate
-BL1208	[artf795378]	ITG 147439: Larger reporting intervals
-BL1175A	[artf795387]	ITG 148893: Link to Commercial Tracking Data
+BL1148	[artf794486]	ITG 142940: Improve filters in Collaborate*
+BL1208	[artf795378]	ITG 147439: Larger reporting intervals*
+BL1175A	[artf795387]	ITG 148893: Link to Commercial Tracking Data*
 ;--------------------------------------------------------------------------------
 ; These are stories from WSAW1420
 ;--------------------------------------------------------------------------------
 --------------	------------	-1440---------------------------------------------
-BL1104	[artf779027]	ITG 144851: Table sorting & structuring throughout app
-BL527	[artf779031]	ITG 141739: Active participants audit (RENEE)
-BL1137	[artf779033]	ITG 142949: FCC Form (RENEE)
-BL1104	[artf779027]	ITG 144851: Table sorting & structuring throughout app
-BL527	[artf779031]	ITG 141739: Active participants audit (RENEE)
-BL1137	[artf779033]	ITG 142949: FCC Form (RENEE)
-BL1039	[artf769945]	ITG 147438: Special service section visibility
-BL1212	[artf769949]	ITG 142945: Modify checkbox dependencies
-BL1068	[artf769956]	ITG 142945: Required Fields for new location
-BL1234	[artf769959]	ITG 141739: Reporting verbiage Updates
-BL927	[artf771023]	ITG 142943: Journey sort save per user
-BL1249	[artf764203]	ITG 147438: Journey Type and Reporting Interval
-BL1264	[artf764204]	ITG 147439: Support Deep Frozen Temp Probe
-BL681	[artf764209]	ITG 142943: Geofence Layers
+BL1104	[artf779027]	ITG 144851: Table sorting & structuring throughout app*
+BL527	[artf779031]	ITG 141739: Active participants audit (RENEE)*
+BL1137	[artf779033]	ITG 142949: FCC Form (RENEE)*
+BL1104	[artf779027]	ITG 144851: Table sorting & structuring throughout app*
+BL527	[artf779031]	ITG 141739: Active participants audit (RENEE)*
+BL1137	[artf779033]	ITG 142949: FCC Form (RENEE)*
+BL1039	[artf769945]	ITG 147438: Special service section visibility*
+BL1212	[artf769949]	ITG 142945: Modify checkbox dependencies*
+BL1068	[artf769956]	ITG 142945: Required Fields for new location*
+BL1234	[artf769959]	ITG 141739: Reporting verbiage Updates*
+BL927	[artf771023]	ITG 142943: Journey sort save per user*
+BL1249	[artf764203]	ITG 147438: Journey Type and Reporting Interval*
+BL1264	[artf764204]	ITG 147439: Support Deep Frozen Temp Probe*
+BL681	[artf764209]	ITG 142943: Geofence Layers*
 --------------	------------	-1420---------------------------------------------
-BL1052	[artf746895]	ITG 147439: Turn on shock for SA2000 device
-BL825b	[artf741221]	ITG 144851: Motion Hibernate Updates
-BL1224	[artf741584]	ITG 142943: Refresh Update in Timeline
-BL1088	[artf731890]	ITG 142949: Opt out of Journey invite emails
-BL1091	[artf731900]	ITG 142943: Take action from Journey Timeline
+BL1052	[artf746895]	ITG 147439: Turn on shock for SA2000 device*
+BL825b	[artf741221]	ITG 144851: Motion Hibernate Updates*
+BL1224	[artf741584]	ITG 142943: Refresh Update in Timeline*
+BL1088	[artf731890]	ITG 142949: Opt out of Journey invite emails*
+BL1091	[artf731900]	ITG 142943: Take action from Journey Timeline*

@@ -1,4 +1,7 @@
 #SingleInstance force
+SetBatchLines, -1
+
+#Include Class_LV_Colors.ahk
 
 ;=============================================================================================================================
 ; BEGIN Customizable Values Section
@@ -16,9 +19,9 @@ VER_ASSIGNED_TO        := "WSAW1460"
 ; Target release Value
 TARGET_RELEASE         := "DL1350 Oct"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S3.L3.01
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.L6.01
 ; Target Test Cycle is the marketing version of the current sprint (it differs from the dev sprint #). Changes per sprint.
-TARGET_TEST_CYCLE      := "Sprint 3"
+TARGET_TEST_CYCLE      := "Sprint 4"
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "QC-CD "
 
@@ -491,10 +494,9 @@ LaunchArtifactPicker()
 
    Gui, +AlwaysOnTop
    Gui, Add, Text,, Select the story for this commit.
-   ;Gui, Add, ListBox, vlbArtifacts glbArtifacts r20 w400
-   Gui, Add, ListView, r20 w500 vlvArtifacts glvArtifacts -Multi NoSortHdr NoSort, Story|Artifact|Description
+   Gui, Add, ListView, r20 w500 -ReadOnly -Multi NoSortHdr NoSort glvArtifacts vVLV hwndHLV, Story|Artifact|Description
    Gui, Add, Button, , Select
-   Gui, Add, Button, , Exitapp
+   Gui, Add, Button, , Exit App
    
    Loop, read, %FILE_ARTIFACTS%
    {
@@ -508,8 +510,6 @@ LaunchArtifactPicker()
       }
    }
 
-   ;GuiControl, ChooseString, lvArtifacts, %DEFAULT_ARTIFACT%
-
    Local X, Y, W, H
 
    ; Get the size of the defect details dialog
@@ -518,32 +518,46 @@ LaunchArtifactPicker()
    ; Show the artifact picker window
    Gui, Show, x%X% y%Y% w%W% h%H%, ProCease - Artifact Picker
 
-   LV_ColorInitiate()
+   ; --- Begin - LV coloring code...must be inline and not in a function -------
+   LV_Colors.OnMessage()
 
-   Loop, % LV_GetCount()
-   {
-      LV_GetText(r1c1Data, A_Index, 1)
+   GuiControl, -Redraw, %HLV%
 
-      If InStr(r1c1Data, "BL")
-         LV_ColorChange(A_Index, "0x005500", "0xFFFFFF")
-      Else If InStr(r1c1Data, "---")
-         LV_ColorChange(A_Index, "0x000000", "0xFFFFFF")
-      Else
-         LV_ColorChange(A_Index, "0x0000CC", "0xFFFFFF")
+   If !LV_Colors.Attach(HLV) {
+      GuiControl, +Redraw, %HLV%
+      Return
    }
 
-   ; Gui gone, return from this function
-   Return
+   Sleep, 10
+
+   Loop, % LV_GetCount() {
+      LV_GetText(rc1Data, A_Index, 1)
+
+      If InStr(rc1Data, "BL") {
+         LV_GetText(rc3Data, A_Index, 3)
+         If InStr(rc3Data, "*") ; put an asterisk on old stories
+            LV_Colors.Row(HLV, A_Index, 0xFFFFFF, 0xa0a0a0)
+         Else
+            LV_Colors.Row(HLV, A_Index, 0xFFFFFF, 0x005500)
+      }
+      Else If InStr(rc1Data, "---") {
+         LV_Colors.Row(HLV, A_Index, 0xFFFFFF, 0x000000)
+      }
+      Else {
+         LV_Colors.Row(HLV, A_Index, 0xFFFFFF, 0x0000CC)
+      }
+   }
+   GuiControl, +Redraw, %HLV%
+   ; --- End - LV coloring code...
 
    ;==================
    ; Gui Handlers
    ;==================
 
-   ;---------------------------------------
-   ; Artifacts listbox double click handler
-   ;---------------------------------------
    lvArtifacts:
    If A_GuiEvent = DoubleClick
+   {
+      rowNum := LV_GetNext(1, "F")
       LV_GetText(Story, A_EventInfo, 1)
       LV_GetText(Artifact, A_EventInfo, 2)
 
@@ -553,12 +567,17 @@ LaunchArtifactPicker()
 
       SelectAll()
       SendInput, %Artifact%{SPACE}%DEV_NAME% - %Story% -{SPACE}
+   }
    Return
 
+   ;---------------------------------------
+   ; Artifacts listbox double click handler
+   ;---------------------------------------
    ButtonSelect:
+   {
       rowNum := LV_GetNext(1, "F")
-      LV_GetText(Story, rowNum, 1)
-      LV_GetText(Artifact, rowNum, 2)
+      LV_GetText(Story, A_EventInfo, 1)
+      LV_GetText(Artifact, A_EventInfo, 2)
 
       Gui, Destroy
 
@@ -566,6 +585,7 @@ LaunchArtifactPicker()
 
       SelectAll()
       SendInput, %Artifact%{SPACE}%DEV_NAME% - %Story% -{SPACE}
+   }
    Return
 
    ;----------------------------------------------------------
@@ -623,67 +643,71 @@ Return
 ;=============================================================================================================================
 ; Listview functions for changing colors
 ;=============================================================================================================================
-LV_ColorInitiate(Gui_Number=1, Control="") ; initiate listview color change procedure 
-{ 
-  global hw_LV_ColorChange 
-  If Control =
-    Control =SysListView321
-  Gui, %Gui_Number%:+Lastfound 
-  Gui_ID := WinExist() 
-  ControlGet, hw_LV_ColorChange, HWND,, %Control%, ahk_id %Gui_ID% 
-  OnMessage( 0x4E, "WM_NOTIFY" ) 
-} 
-
-LV_ColorChange(Index="", TextColor="", BackColor="") ; change specific line's color or reset all lines
-{ 
-  global 
-  If Index = 
-    Loop, % LV_GetCount() 
-      LV_ColorChange(A_Index) 
-  Else
-    { 
-    Line_Color_%Index%_Text := TextColor 
-    Line_Color_%Index%_Back := BackColor 
-    WinSet, Redraw,, ahk_id %hw_LV_ColorChange% 
-    } 
-}
-
-WM_NOTIFY( p_w, p_l, p_m )
-{ 
-  local  draw_stage, Current_Line, Index
-  if ( DecodeInteger( "uint4", p_l, 0 ) = hw_LV_ColorChange ) { 
-      if ( DecodeInteger( "int4", p_l, 8 ) = -12 ) {                            ; NM_CUSTOMDRAW 
-          draw_stage := DecodeInteger( "uint4", p_l, 12 ) 
-          if ( draw_stage = 1 )                                                 ; CDDS_PREPAINT 
-              return, 0x20                                                      ; CDRF_NOTIFYITEMDRAW 
-          else if ( draw_stage = 0x10000|1 ){                                   ; CDDS_ITEM 
-              Current_Line := DecodeInteger( "uint4", p_l, 36 )+1 
-              ;LV_GetText(Index, Current_Line) 
-              If (Line_Color_%Current_Line%_Text != ""){ 
-                  EncodeInteger( Line_Color_%Current_Line%_Text, 4, p_l, 48 )   ; foreground 
-                  EncodeInteger( Line_Color_%Current_Line%_Back, 4, p_l, 52 )   ; background 
-                } 
-            } 
-        } 
-    } 
-} 
-
-DecodeInteger( p_type, p_address, p_offset, p_hex=true )
-{ 
-  old_FormatInteger := A_FormatInteger 
-  ifEqual, p_hex, 1, SetFormat, Integer, hex 
-  else, SetFormat, Integer, dec 
-  StringRight, size, p_type, 1 
-  loop, %size% 
-      value += *( ( p_address+p_offset )+( A_Index-1 ) ) << ( 8*( A_Index-1 ) ) 
-  if ( size <= 4 and InStr( p_type, "u" ) != 1 and *( p_address+p_offset+( size-1 ) ) & 0x80 ) 
-      value := -( ( ~value+1 ) & ( ( 2**( 8*size ) )-1 ) ) 
-  SetFormat, Integer, %old_FormatInteger% 
-  return, value 
-} 
-
-EncodeInteger( p_value, p_size, p_address, p_offset )
-{ 
-  loop, %p_size% 
-    DllCall( "RtlFillMemory", "uint", p_address+p_offset+A_Index-1, "uint", 1, "uchar", p_value >> ( 8*( A_Index-1 ) ) ) 
-} 
+;LV_ColorInitiate(Gui_Number=1, Control="") ; initiate listview color change procedure 
+;{ 
+;  global hw_LV_ColorChange 
+;  If Control =
+;    Control =SysListView321
+;  Gui, %Gui_Number%:+Lastfound 
+;  Gui_ID := WinExist() 
+;  ControlGet, hw_LV_ColorChange, HWND,, %Control%, ahk_id %Gui_ID% 
+;  OnMessage( 0x4E, "WM_NOTIFY" ) 
+;} 
+;
+;LV_ColorChange(Index="", TextColor="", BackColor="") ; change specific line's color or reset all lines
+;{ 
+;   global 
+;   If Index = Loop, % LV_GetCount() {
+;      LV_ColorChange(A_Index) 
+;   }
+;   Else { 
+;      Line_Color_%Index%_Text := TextColor 
+;      Line_Color_%Index%_Back := BackColor 
+;      WinSet, Redraw,, ahk_id %hw_LV_ColorChange% 
+;   } 
+;}
+;
+;WM_NOTIFY( p_w, p_l, p_m )
+;{ 
+;   local draw_stage, Current_Line, Index
+;   If ( DecodeInteger( "uint4", p_l, 0 ) = hw_LV_ColorChange ) { 
+;      If ( DecodeInteger( "int4", p_l, 8 ) = -12 ) {                         ; NM_CUSTOMDRAW 
+;         draw_stage := DecodeInteger( "uint4", p_l, 12 ) 
+;
+;         If ( draw_stage = 1 ) {                                             ; CDDS_PREPAINT 
+;            return, 0x20                                                     ; CDRF_NOTIFYITEMDRAW 
+;         }
+;         Else If ( draw_stage = 0x10000|1 ) {                                ; CDDS_ITEM 
+;            Current_Line := DecodeInteger( "uint4", p_l, 36 )+1 
+;            If (Line_Color_%Current_Line%_Text != "") { 
+;               EncodeInteger( Line_Color_%Current_Line%_Text, 4, p_l, 48 )   ; foreground 
+;               EncodeInteger( Line_Color_%Current_Line%_Back, 4, p_l, 52 )   ; background 
+;            } 
+;         } 
+;      } 
+;   } 
+;} 
+;
+;DecodeInteger( p_type, p_address, p_offset, p_hex=true )
+;{ 
+;   old_FormatInteger := A_FormatInteger 
+;
+;   IfEqual, p_hex, 1, SetFormat, Integer, hex 
+;   Else, SetFormat, Integer, dec 
+;
+;   StringRight, size, p_type, 1 
+;
+;   Loop, %size% 
+;      value += *( ( p_address+p_offset )+( A_Index-1 ) ) << ( 8*( A_Index-1 ) ) 
+;      If ( size <= 4 and InStr( p_type, "u" ) != 1 and *( p_address+p_offset+( size-1 ) ) & 0x80 ) 
+;         value := -( ( ~value+1 ) & ( ( 2**( 8*size ) )-1 ) ) 
+;
+;      SetFormat, Integer, %old_FormatInteger% 
+;   Return, value 
+;} 
+;
+;EncodeInteger( p_value, p_size, p_address, p_offset )
+;{ 
+;   Loop, %p_size% 
+;      DllCall( "RtlFillMemory", "uint", p_address+p_offset+A_Index-1, "uint", 1, "uchar", p_value >> ( 8*( A_Index-1 ) ) ) 
+;} 
