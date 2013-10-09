@@ -558,8 +558,8 @@ LaunchArtifactPicker()
    If A_GuiEvent = DoubleClick
    {
       rowNum := LV_GetNext(1, "F")
-      LV_GetText(Story, A_EventInfo, 1)
-      LV_GetText(Artifact, A_EventInfo, 2)
+      LV_GetText(Story, rowNum, 1)
+      LV_GetText(Artifact, rowNum, 2)
 
       Gui, Destroy
 
@@ -576,8 +576,8 @@ LaunchArtifactPicker()
    ButtonSelect:
    {
       rowNum := LV_GetNext(1, "F")
-      LV_GetText(Story, A_EventInfo, 1)
-      LV_GetText(Artifact, A_EventInfo, 2)
+      LV_GetText(Story, rowNum, 1)
+      LV_GetText(Artifact, rowNum, 2)
 
       Gui, Destroy
 
