@@ -9,24 +9,24 @@ DEFECTS	[artf787988]	ITG 156144: FY14 JTracy Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf811809]	Translations submission work
-TRANS-APPLY	[artf811809]	Translations application work
+TRANS-SUBMIT	[artf826079]	Translations submission work
+TRANS-APPLY	[artf826079]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on for WSAW1460
 ;--------------------------------------------------------------------------------
---------------	------------	-1460.S3------------------------------------------
-BL1270	[artf811809]	ITG 142942: Edit User Capabilities
---------------	------------	-1460.S2------------------------------------------
-BL1230	[artf794537]	ITG 142943: Current Location Column*
-BL1175B	[artf805901]	ITG 148893: Link to Commercial Tracking Data - Pt 2*
---------------	------------	-1460.S1------------------------------------------
-BL1148	[artf794486]	ITG 142940: Improve filters in Collaborate*
-BL1208	[artf795378]	ITG 147439: Larger reporting intervals*
-BL1175A	[artf795387]	ITG 148893: Link to Commercial Tracking Data*
+--------------	------------	-1480.S1------------------------------------------
+BL1089	[artf826079]	ITG 142945 Show both Device & Probe temps in app
 ;--------------------------------------------------------------------------------
 ; These are stories from WSAW1420
 ;--------------------------------------------------------------------------------
---------------	------------	-1440---------------------------------------------
+--------------	------------	-1460----------------------------------------------
+BL1270	[artf811809]	ITG 142942: Edit User Capabilities*
+BL1230	[artf794537]	ITG 142943: Current Location Column*
+BL1175B	[artf805901]	ITG 148893: Link to Commercial Tracking Data - Pt 2*
+BL1148	[artf794486]	ITG 142940: Improve filters in Collaborate*
+BL1208	[artf795378]	ITG 147439: Larger reporting intervals*
+BL1175A	[artf795387]	ITG 148893: Link to Commercial Tracking Data*
+--------------	------------	-1440----------------------------------------------
 BL1104	[artf779027]	ITG 144851: Table sorting & structuring throughout app*
 BL527	[artf779031]	ITG 141739: Active participants audit (RENEE)*
 BL1137	[artf779033]	ITG 142949: FCC Form (RENEE)*
@@ -41,7 +41,7 @@ BL927	[artf771023]	ITG 142943: Journey sort save per user*
 BL1249	[artf764203]	ITG 147438: Journey Type and Reporting Interval*
 BL1264	[artf764204]	ITG 147439: Support Deep Frozen Temp Probe*
 BL681	[artf764209]	ITG 142943: Geofence Layers*
---------------	------------	-1420---------------------------------------------
+--------------	------------	-1420----------------------------------------------
 BL1052	[artf746895]	ITG 147439: Turn on shock for SA2000 device*
 BL825b	[artf741221]	ITG 144851: Motion Hibernate Updates*
 BL1224	[artf741584]	ITG 142943: Refresh Update in Timeline*

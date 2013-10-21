@@ -445,8 +445,8 @@ LaunchDefectActionWindow()
 
       StringSplit, EmpData, lbEmpNums, %A_Tab%
 
-      SetAssignedTo(EmpData2)
       SetTeamAssigned(EmpData3)
+      SetAssignedTo(EmpData2)
 
       ClickOk()
    Return
