@@ -15,13 +15,13 @@ QC_TITLE               := "HP Application Lifecycle Management" ; for stand-alon
 DEV_NAME               := "Scott"
 
 ; The version the defect is assigned to and being fixed for. It will change per release.
-VER_ASSIGNED_TO        := "WSAW1460"
+VER_ASSIGNED_TO        := "WSAW1480"
 ; Target release Value
-TARGET_RELEASE         := "DL1350 Oct"
+TARGET_RELEASE         := "OL1312 Dec"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.L6.01
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S1.L3.01
 ; Target Test Cycle is the marketing version of the current sprint (it differs from the dev sprint #). Changes per sprint.
-TARGET_TEST_CYCLE      := "Sprint 4"
+TARGET_TEST_CYCLE      := "Sprint 1"
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "QC-CD "
 
