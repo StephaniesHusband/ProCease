@@ -15,6 +15,7 @@ TRANS-APPLY	[artf826079]	Translations application work
 ; These are the stories I'm working on for WSAW1460
 ;--------------------------------------------------------------------------------
 --------------	------------	-1480.S2------------------------------------------
+BL1241	[artf833887]	ITG 142945: Default instant alert to checked
 BL1303	[artf833896]	ITG 142943: (1303a/b) Device Data w/No Journey
 --------------	------------	-1480.S1------------------------------------------
 BL1089	[artf826079]	ITG 142945 Show both Device & Probe temps in app*
