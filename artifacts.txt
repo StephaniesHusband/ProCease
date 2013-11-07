@@ -9,8 +9,8 @@ DEFECTS	[artf787988]	ITG 156144: FY14 JTracy Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf826079]	Translations submission work
-TRANS-APPLY	[artf826079]	Translations application work
+TRANS-SUBMIT	[artf833887]	Translations submission work
+TRANS-APPLY	[artf833887]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on for WSAW1460
 ;--------------------------------------------------------------------------------
