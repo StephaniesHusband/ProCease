@@ -5,24 +5,28 @@
 ; If you have a defect for a story that was in a non-released sprint, check it
 ; in on that sprint story's ITG/artifact below.
 ;--------------------------------------------------------------------------------
-DEFECTS	[artf787988]	ITG 156144: FY14 JTracy Production Maintenance
+dummy	dummy	dummy - why is this necessary! debug procease!
+DEFECTS	[artf826328]	ITG 156144: FY14 JTracy Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
 TRANS-SUBMIT	[artf833887]	Translations submission work
 TRANS-APPLY	[artf833887]	Translations application work
 ;--------------------------------------------------------------------------------
-; These are the stories I'm working on for WSAW1460
+; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
---------------	------------	-1480.S2------------------------------------------
-BL1241	[artf833887]	ITG 142945: Default instant alert to checked
-BL1303	[artf833896]	ITG 142943: (1303a/b) Device Data w/No Journey
---------------	------------	-1480.S1------------------------------------------
+--------------	------------	-1500.S1 ------------------------------------------
+BL1297	[artf855769]	ITG 142943: Transporter Inbound and Outbound Info
+BL1303E	[artf855762]	ITG 147437: Device data with no journey - Ping & MH
+BL1291	[artf855777]	ITG 142943: Temperature Graph Update
+BL1297	[artf855773]	ITG 142943: Alert icon colors in Timeline
+;--------------------------------------------------------------------------------
+; Old stories *put an asterisk on end to color as old stories
+;--------------------------------------------------------------------------------
+--------------	------------	-1480---------------------------------------------
+BL1241	[artf833887]	ITG 142945: Default instant alert to checked*
+BL1303	[artf833896]	ITG 142943: (1303a/b) Device Data w/No Journey*
 BL1089	[artf826079]	ITG 142945 Show both Device & Probe temps in app*
-
-;--------------------------------------------------------------------------------
-; Old stories
-;--------------------------------------------------------------------------------
 --------------	------------	-1460----------------------------------------------
 BL1270	[artf811809]	ITG 142942: Edit User Capabilities*
 BL1230	[artf794537]	ITG 142943: Current Location Column*
