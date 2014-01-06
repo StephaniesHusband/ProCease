@@ -6,20 +6,22 @@
 ; in on that sprint story's ITG/artifact below.
 ;--------------------------------------------------------------------------------
 dummy	dummy	dummy - why is this necessary! debug procease!
-DEFECTS	[artf826328]	ITG 156144: FY14 JTracy Production Maintenance
+DEFECTS	[artf856559]	ITG 156144: FY14 JTracy Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf833887]	Translations submission work
-TRANS-APPLY	[artf833887]	Translations application work
+TRANS-SUBMIT	[artf860504]	Translations submission work
+TRANS-APPLY	[artf860504]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
+--------------	------------	-1500.S2 ------------------------------------------
+DEFECTS	[artf856559]	ITG 156144: FY14 JTracy Production Maintenance
 --------------	------------	-1500.S1 ------------------------------------------
-BL1297	[artf855769]	ITG 142943: Transporter Inbound and Outbound Info
-BL1303E	[artf855762]	ITG 147437: Device data with no journey - Ping & MH
-BL1291	[artf855777]	ITG 142943: Temperature Graph Update
-BL1297	[artf855773]	ITG 142943: Alert icon colors in Timeline
+BL1297	[artf855769]	ITG 142943: Transporter Inbound and Outbound Info*
+BL1303E	[artf855762]	ITG 147437: Device data with no journey - Ping & MH*
+BL1291	[artf855777]	ITG 142943: Temperature Graph Update*
+BL1261	[artf855773]	ITG 142943: Alert icon colors in Timeline*
 ;--------------------------------------------------------------------------------
 ; Old stories *put an asterisk on end to color as old stories
 ;--------------------------------------------------------------------------------
