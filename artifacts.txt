@@ -10,11 +10,14 @@ DEFECTS	[artf856559]	ITG 156144: FY14 JTracy Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf860504]	Translations submission work
-TRANS-APPLY	[artf860504]	Translations application work
+TRANS-SUBMIT	[artf865568]	Translations submission work
+TRANS-APPLY	[artf865568]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
+--------------	------------	-1500.S3 ------------------------------------------
+BL1317	[artf865568]	ITG 147438: Time based Geofence improvements
+BL1293	[artf865573]	ITG 147440: User Profile Update
 --------------	------------	-1500.S2 ------------------------------------------
 DEFECTS	[artf856559]	ITG 156144: FY14 JTracy Production Maintenance
 --------------	------------	-1500.S1 ------------------------------------------
@@ -23,7 +26,7 @@ BL1303E	[artf855762]	ITG 147437: Device data with no journey - Ping & MH*
 BL1291	[artf855777]	ITG 142943: Temperature Graph Update*
 BL1261	[artf855773]	ITG 142943: Alert icon colors in Timeline*
 ;--------------------------------------------------------------------------------
-; Old stories *put an asterisk on end to color as old stories
+; Old stories - *put an asterisk on end to color as old stories
 ;--------------------------------------------------------------------------------
 --------------	------------	-1480---------------------------------------------
 BL1241	[artf833887]	ITG 142945: Default instant alert to checked*
