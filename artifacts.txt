@@ -16,6 +16,7 @@ TRANS-APPLY	[artf865568]	Translations application work
 ; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
 --------------	------------	-1500.S3 ------------------------------------------
+IT104	[artf865560]	ITG 150121: Improve functionality of Device Software Mgmt
 BL1293	[artf865573]	ITG 147440: User Profile Update
 BL1317	[artf865568]	ITG 147438: Time based Geofence improvements
 BL1333	[artf869116]	ITG 144851: New Login image
