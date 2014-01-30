@@ -402,6 +402,7 @@ LaunchDefectActionWindow()
    Gui, Add, Edit, r1 vPlannedClosingVersion, %VER_PLANNED_CLOSING%
    Gui, Add, Button, , Mark As Fixed
    Gui, Add, Button, Default, Reassign
+   Gui, Add, Button, , Grab And Fix
    Gui, Add, Button, , Return It
    Gui, Add, Button, , Close All
 
@@ -475,6 +476,18 @@ LaunchDefectActionWindow()
       SetDefectStatus(%STATUS_RETURNED%)
 
       ClickOk()
+   Return
+
+   ButtonGrabAndFix:
+      Gui, Submit
+      Gui, Destroy
+
+      SetAssignedTo("263952")
+
+      WaitFor(POP_DEF_DETAILS)
+
+      FixDefect(PlannedClosingVersion, TARGET_TEST_CYCLE, VER_ASSIGNED_TO)
+
    Return
 
    ;------------------
