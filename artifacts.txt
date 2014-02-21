@@ -6,21 +6,29 @@
 ; in on that sprint story's ITG/artifact below.
 ;--------------------------------------------------------------------------------
 dummy	dummy	dummy - why is this necessary! debug procease!
-DEFECTS	[artf856559]	ITG 156144: FY14 JTracy Production Maintenance
+DEFECTS	[artf880599]	ITG 156144: Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf865568]	Translations submission work
-TRANS-APPLY	[artf865568]	Translations application work
+TRANS-SUBMIT	[artf881076]	Translations submission work
+TRANS-APPLY	[artf881076]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
+--------------	------------	-1520.S1 ------------------------------------------
+BL719a	[artf881076]	ITG 147439: Support sendum devices - UI Triggers
+BL719e	[artf881073]	ITG 147439: Support sendum devices - SAMS
+BL1332	[artf881079]	ITG 147440: NIST Expiration changes
+BL1302a	[artf881081]	ITG 147437: Start device and process journey later
+;--------------------------------------------------------------------------------
+; Old stories - *put an asterisk on end to color as old stories
+;--------------------------------------------------------------------------------
 --------------	------------	-1500.S3 ------------------------------------------
-IT104	[artf865560]	ITG 150121: Improve functionality of Device Software Mgmt
-BL1293	[artf865573]	ITG 147440: User Profile Update
-BL1317	[artf865568]	ITG 147438: Time based Geofence improvements
-BL1319	[artf865569]	ITG 150121: Remove User Account
-BL1333	[artf869116]	ITG 144851: New Login image
+IT104	[artf865560]	ITG 150121: Improve functionality of Device Software Mgmt*
+BL1293	[artf865573]	ITG 147440: User Profile Update*
+BL1317	[artf865568]	ITG 147438: Time based Geofence improvements*
+BL1319	[artf865569]	ITG 150121: Remove User Account*
+BL1333	[artf869116]	ITG 144851: New Login image*
 --------------	------------	-1500.S2 ------------------------------------------
 DEFECTS	[artf856559]	ITG 156144: FY14 JTracy Production Maintenance
 --------------	------------	-1500.S1 ------------------------------------------
@@ -28,9 +36,6 @@ BL1297	[artf855769]	ITG 142943: Transporter Inbound and Outbound Info*
 BL1303E	[artf855762]	ITG 147437: Device data with no journey - Ping & MH*
 BL1291	[artf855777]	ITG 142943: Temperature Graph Update*
 BL1261	[artf855773]	ITG 142943: Alert icon colors in Timeline*
-;--------------------------------------------------------------------------------
-; Old stories - *put an asterisk on end to color as old stories
-;--------------------------------------------------------------------------------
 --------------	------------	-1480---------------------------------------------
 BL1241	[artf833887]	ITG 142945: Default instant alert to checked*
 BL1303	[artf833896]	ITG 142943: (1303a/b) Device Data w/No Journey*

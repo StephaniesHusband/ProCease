@@ -15,14 +15,14 @@ QC_TITLE               := "HP Application Lifecycle Management" ; for stand-alon
 DEV_NAME               := "Scott"
 
 ; The version the defect is assigned to and being fixed for. It will change per release.
-VER_ASSIGNED_TO        := "WSAW1500"
+VER_ASSIGNED_TO        := "WSAW1520"
 ; Target release Value
-TARGET_RELEASE         := "OL1402 Feb"
+TARGET_RELEASE         := "OL1404 Apr"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
 ; e.g., ReleaseXX.SprintXX.BuildXX...WSAW1500.S1.01
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.02
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S1.01
 ; Target Test Cycle is the marketing version of the current sprint (it differs from the dev sprint #). Changes per sprint.
-TARGET_TEST_CYCLE      := "Sprint 4"
+TARGET_TEST_CYCLE      := "Sprint 1"
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "Defect #"
 
@@ -372,10 +372,8 @@ FixDefect(pcv, ttc, atv)
    ; Details tab
    SetDefectStatus(STATUS_FIXED)
    SetTargetRelease(TARGET_RELEASE)
-   ;SetAssignedToVersion(atv)
 
    ; Additional Info tab
-   ;SetTargetTestCycle(ttc)
    SetPlannedClosingVersion(pcv)
 
    ; Closing Info tab
@@ -472,8 +470,8 @@ LaunchDefectActionWindow()
       Gui, Submit
       Gui, Destroy
 
+      SetDefectStatus(STATUS_RETURNED)
       SetTeamAssigned(TEAM_RETURNED)
-      SetDefectStatus(%STATUS_RETURNED%)
 
       ClickOk()
    Return
@@ -487,7 +485,6 @@ LaunchDefectActionWindow()
       WaitFor(POP_DEF_DETAILS)
 
       FixDefect(PlannedClosingVersion, TARGET_TEST_CYCLE, VER_ASSIGNED_TO)
-
    Return
 
    ;------------------
