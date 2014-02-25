@@ -15,14 +15,19 @@ TRANS-APPLY	[artf881076]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
---------------	------------	-1520.S1 ------------------------------------------
+--------------	------------	-1520.S2 ------------------------------------------
+BL1327	[artf889342]	ITG 147438: Default cursor in device field	None	
+BL1315b	[artf889344]	ITG 142943: Add map views to all maps in the app
 BL719a	[artf881076]	ITG 147439: Support sendum devices - UI Triggers
 BL719e	[artf881073]	ITG 147439: Support sendum devices - SAMS
-BL1332	[artf881079]	ITG 147440: NIST Expiration changes
-BL1302a	[artf881081]	ITG 147437: Start device and process journey later
 ;--------------------------------------------------------------------------------
 ; Old stories - *put an asterisk on end to color as old stories
 ;--------------------------------------------------------------------------------
+--------------	------------	-1520.S1 ------------------------------------------
+BL719a	[artf881076]	ITG 147439: Support sendum devices - UI Triggers*
+BL719e	[artf881073]	ITG 147439: Support sendum devices - SAMS*
+BL1332	[artf881079]	ITG 147440: NIST Expiration changes*
+BL1302a	[artf881081]	ITG 147437: Start device and process journey later*
 --------------	------------	-1500.S3 ------------------------------------------
 IT104	[artf865560]	ITG 150121: Improve functionality of Device Software Mgmt*
 BL1293	[artf865573]	ITG 147440: User Profile Update*
