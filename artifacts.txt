@@ -10,16 +10,23 @@ DEFECTS	[artf880599]	ITG 156144: Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf881076]	Translations submission work
-TRANS-APPLY	[artf881076]	Translations application work
+TRANS-SUBMIT	[artf889347]	Translations submission work
+TRANS-APPLY	[artf889347]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
+--------------	------------	-1520.S3 ------------------------------------------
+BL1226	[artf899850]	ITG 142942: Multi-org capabilities
+BL1245	[artf889347]	ITG 144851: Additional filter options
+BL1287	[artf899853]	ITG 142945: New reference field
+BL1333b	[artf899336]	ITG 144851: New Login Image
+BL1342	[artf899865]	ITG 144851: Customer notification window link to Help updates
 --------------	------------	-1520.S2 ------------------------------------------
-BL1327	[artf889342]	ITG 147438: Default cursor in device field	None	
-BL1315b	[artf889344]	ITG 142943: Add map views to all maps in the app
-BL719a	[artf881076]	ITG 147439: Support sendum devices - UI Triggers
-BL719e	[artf881073]	ITG 147439: Support sendum devices - SAMS
+BL1245	[artf889347]	ITG 144851: Additional filter options*
+BL1327	[artf889342]	ITG 147438: Default cursor in device field*
+BL1315b	[artf889344]	ITG 142943: Add map views to all maps in the app*
+BL719a	[artf881076]	ITG 147439: Support sendum devices - UI Triggers*
+BL719e	[artf881073]	ITG 147439: Support sendum devices - SAMS*
 ;--------------------------------------------------------------------------------
 ; Old stories - *put an asterisk on end to color as old stories
 ;--------------------------------------------------------------------------------
