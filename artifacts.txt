@@ -6,23 +6,25 @@
 ; in on that sprint story's ITG/artifact below.
 ;--------------------------------------------------------------------------------
 dummy	dummy	dummy - why is this necessary! debug procease!
-DEFECTS	[artf899850]	ITG 156144: Production Maintenance
+DEFECTS	[artf922362]	ITG 156144: Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf899850]	Translations submission work
-TRANS-APPLY	[artf899850]	Translations application work
+TRANS-SUBMIT	[artf922362]	Translations submission work
+TRANS-APPLY	[artf922362]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
---------------	------------	-1540.S1 ------------------------------------------
-BL1226	[artf899850]	ITG 142942: Multi-org capabilities
-BL719H	[artf914195]	ITG 147439: Support Sendum - Light Lux
-BL719L	[artf914200]	ITG 147439: Support sendum devices - Ping
-BL719J	[artf914203]	ITG 147439: Support sendum devices - Better Battery Data
+--------------	------------	-1560.S2 ------------------------------------------
+BL1167a	[artf922362]	ITG 142945: Reporting interval changes
 ;--------------------------------------------------------------------------------
 ; Old stories - *put an asterisk on end to color as old stories
 ;--------------------------------------------------------------------------------
+--------------	------------	-1540.S1 ------------------------------------------
+BL1226	[artf899850]	ITG 142942: Multi-org capabilities*
+BL719H	[artf914195]	ITG 147439: Support Sendum - Light Lux*
+BL719L	[artf914200]	ITG 147439: Support sendum devices - Ping*
+BL719J	[artf914203]	ITG 147439: Support sendum devices - Better Battery Data*
 --------------	------------	-1520.S3 ------------------------------------------
 BL1226	[artf899850]	ITG 142942: Multi-org capabilities*
 BL1245	[artf889347]	ITG 144851: Additional filter options*
