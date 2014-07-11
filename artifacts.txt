@@ -10,15 +10,15 @@ DEFECTS	[artf942271]	ITG 164686: KStewart FY15 Production Maintenance
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf922362]	Translations submission work
-TRANS-APPLY	[artf922362]	Translations application work
+TRANS-SUBMIT	[artf942271]	Translations submission work
+TRANS-APPLY	[artf942271]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
 --------------	------------	-1560.S2 ------------------------------------------
 BL1226	[artf899850]	ITG 142942: Multi-org capabilities
 BL328	[artf946970]	ITG 142940: Attach a document to a journey
-BL1299	[artf946971]	ITG 147439: Probe acknowledged in journey details
+BL1299	[artf946971]	ITG 147439: Probe acknowledged in journey details*
 --------------	------------	-1560.S1 ------------------------------------------
 IT129c	[artf947129]	ITG 150121: Replace Google Maps with ESRI*
 BL1226	[artf899850]	ITG 142942: Multi-org capabilities*

@@ -20,9 +20,7 @@ VER_ASSIGNED_TO        := "WSAW1560"
 TARGET_RELEASE         := "OL1408 Aug"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
 ; e.g., ReleaseXX.SprintXX.BuildXX...WSAW1500.S1.01
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S1.01
-; Target Test Cycle is the marketing version of the current sprint (it differs from the dev sprint #). Changes per sprint.
-TARGET_TEST_CYCLE      := "Sprint 1"
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S3.01
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "Defect #"
 
@@ -356,10 +354,9 @@ FindDefect(defectNum)
 ;
 ; Parameters:
 ;  pcv   =  Planned closing Version (e.g., WSAW1380.S3.L3.01)
-;  ttc   =  Target test cycle (e.g., Sprint 1)
 ;  atv   =  Assigned to version (e.g., WSAW1380)
 ;----------------------------------------------------------------------------------------------------
-FixDefect(pcv, ttc, atv)
+FixDefect(pcv, atv)
 {
    Global
 
@@ -460,7 +457,7 @@ LaunchDefectActionWindow()
 
       WaitFor(POP_DEF_DETAILS)
 
-      FixDefect(PlannedClosingVersion, TARGET_TEST_CYCLE, VER_ASSIGNED_TO)
+      FixDefect(PlannedClosingVersion, VER_ASSIGNED_TO)
    Return
 
    ;---------------
@@ -484,7 +481,7 @@ LaunchDefectActionWindow()
 
       WaitFor(POP_DEF_DETAILS)
 
-      FixDefect(PlannedClosingVersion, TARGET_TEST_CYCLE, VER_ASSIGNED_TO)
+      FixDefect(PlannedClosingVersion, VER_ASSIGNED_TO)
    Return
 
    ;------------------
