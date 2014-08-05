@@ -19,8 +19,8 @@ VER_ASSIGNED_TO        := "WSAW1560"
 ; Target release Value
 TARGET_RELEASE         := "OL1408 Aug"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
-; e.g., ReleaseXX.SprintXX.BuildXX...WSAW1500.S1.01
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S3.01
+; e.g., ReleaseXX.SprintXX.BuildXX...WSAW1500.S1.02
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.01
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "Defect #"
 
@@ -256,6 +256,21 @@ SetPlannedClosingVersion(ver)
 ;-----------------------------------------------------------------------------------------------------------------------------
 ; Function
 ;-----------------------------------------------------------------------------------------------------------------------------
+SetAdditionalCategory1(c1)
+{
+   Global
+
+   WaitFor(POP_DEF_DETAILS)
+   GoToTab(TAB_AINFO)
+   SendInput, {TAB 21}
+   SelectAll()
+   SendInput, %c1%
+   Sleep, STEP_SLEEP
+}
+
+;-----------------------------------------------------------------------------------------------------------------------------
+; Function
+;-----------------------------------------------------------------------------------------------------------------------------
 SetTargetTestCycle(cycle)
 {
    Global
@@ -372,11 +387,12 @@ FixDefect(pcv, atv)
 
    ; Additional Info tab
    SetPlannedClosingVersion(pcv)
+   SetAdditionalCategory1("CUSTAPP FLEX") ; make parameter?
 
    ; Closing Info tab
    SetDefectType(DEFECT_TYPE)
    SetRootCauseTeam(TEAM_ROOT_CAUSE)
-   SetRootCauseDetails("Code breakage")
+   SetRootCauseDetails("UNCHECKED/MISSED CONDITION") ; make parameter?
 
    ; Resolution tab
    SetResolution(RESOLUTION)
@@ -467,8 +483,8 @@ LaunchDefectActionWindow()
       Gui, Submit
       Gui, Destroy
 
-      SetDefectStatus(STATUS_RETURNED)
       SetTeamAssigned(TEAM_RETURNED)
+      SetDefectStatus(STATUS_RETURNED)
 
       ClickOk()
    Return
