@@ -6,12 +6,14 @@
 ; in on that sprint story's ITG/artifact below.
 ;--------------------------------------------------------------------------------
 dummy	dummy	dummy - why is this necessary! debug procease!
-DEFECTS	[artf942271]	ITG 164686: KStewart FY15 Production Maintenance
+DEFECT	[artf971224]	1580 Defects
+DEFECT	[artf985950]	1561 Defects
+Redesign	[artf985278]	ITG 162793: HTML5 Redesign (for trunk)
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
-TRANS-SUBMIT	[artf942271]	Translations submission work
-TRANS-APPLY	[artf942271]	Translations application work
+TRANS-SUBMIT	[artf971224]	Translations submission work
+TRANS-APPLY	[artf971224]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
