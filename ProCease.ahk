@@ -20,7 +20,7 @@ VER_ASSIGNED_TO        := "WSAW1580"
 TARGET_RELEASE         := "OL1410 Oct"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
 ; e.g., ReleaseXX.SprintXX.BuildXX...WSAW1500.S1.02
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S2.01
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.03
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "Defect #"
 
@@ -172,7 +172,7 @@ SetAssignedTo(id)
 
    WaitFor(POP_DEF_DETAILS)
    GoToTab(TAB_DET)
-   SendInput, {TAB 10}
+   SendInput, {TAB 11}
    SelectAll()
    SendInput, %id%
    Sleep, STEP_SLEEP
@@ -187,7 +187,7 @@ SetTeamAssigned(team)
 
    WaitFor(POP_DEF_DETAILS)
    GoToTab(TAB_DET)
-   SendInput, {TAB 8}
+   SendInput, {TAB 9}
    SelectAll()
    SendInput, %team%
    Sleep, STEP_SLEEP
@@ -202,7 +202,7 @@ SetDefectStatus(status)
 
    WaitFor(POP_DEF_DETAILS)
    GoToTab(TAB_DET)
-   SendInput, {TAB 3}
+   SendInput, {TAB 4}
    SelectAll()
    SendInput, %status%
    Sleep, STEP_SLEEP
@@ -217,7 +217,7 @@ SetTargetRelease(release)
 
    WaitFor(POP_DEF_DETAILS)
    GoToTab(TAB_DET)
-   SendInput, {TAB 11}
+   SendInput, {TAB 12}
    SelectAll()
    SendInput, %release%
    Sleep, STEP_SLEEP
@@ -232,7 +232,7 @@ SetAssignedToVersion(ver)
 
    WaitFor(POP_DEF_DETAILS)
    GoToTab(TAB_DET)
-   SendInput, {TAB 20}
+   SendInput, {TAB 21}
    SelectAll()
    SendInput, %ver%
    Sleep, STEP_SLEEP

@@ -5,10 +5,10 @@
 ; If you have a defect for a story that was in a non-released sprint, check it
 ; in on that sprint story's ITG/artifact below.
 ;--------------------------------------------------------------------------------
-dummy	dummy	dummy - why is this necessary! debug procease!
+dummy	dummy	dummy - why is this necessary! debug ProCease!
 DEFECT	[artf971224]	1580 Defects
-DEFECT	[artf985950]	1561 Defects
-Redesign	[artf985278]	ITG 162793: HTML5 Redesign (for trunk)
+DEFECT	[artf1003993]	1600 Defects
+Redesign	[artf985278]	ITG 162793: HTML5 Redesign (for 1580 trunk)
 ;--------------------------------------------------------------------------------
 ; These are any valid artifact for any story in the sprint.
 ;--------------------------------------------------------------------------------
@@ -17,9 +17,22 @@ TRANS-APPLY	[artf971224]	Translations application work
 ;--------------------------------------------------------------------------------
 ; These are the stories I'm working on...
 ;--------------------------------------------------------------------------------
+--------------	------------	-1600.S1 ------------------------------------------
+BL1423	[artf.......]	ITG 162793: Login Page/Feature
+BL1424	[artf.......]	ITG 162793: Reset Password
+BL1425	[artf.......]	ITG 162793: Login Select Language
+BL1426	[artf.......]	ITG 162793: Global Navigation
+BL1431	[artf.......]	ITG 162793: Footer
+;--------------------------------------------------------------------------------
+; Old stories - *put an asterisk on end to color as old stories
+;--------------------------------------------------------------------------------
+--------------	------------	-1580.HS ------------------------------------------
+IT151	[artf997817]	ITG 150121: ESRI maps update*
+--------------	------------	-1580.S3 ------------------------------------------
+BL1416a	[artf990481]	ITG 142943: Show delayed date/time in monitor*
 --------------	------------	-1560.S2 ------------------------------------------
-BL1226	[artf899850]	ITG 142942: Multi-org capabilities
-BL328	[artf946970]	ITG 142940: Attach a document to a journey
+BL1226	[artf899850]	ITG 142942: Multi-org capabilities*
+BL328	[artf946970]	ITG 142940: Attach a document to a journey*
 BL1299	[artf946971]	ITG 147439: Probe acknowledged in journey details*
 --------------	------------	-1560.S1 ------------------------------------------
 IT129c	[artf947129]	ITG 150121: Replace Google Maps with ESRI*
@@ -28,9 +41,6 @@ BL328	[artf946970]	ITG 142940: Attach a document to a journey*
 BL1299	[artf946971]	ITG 147439: Probe acknowledged in journey details*
 BL1323b	[artf946973]	ITG 147438: Auto-close option for a device in a charging rack*
 BL1393	[artf946974]	ITG 144851: Remove the 'X New Alerts' count*
-;--------------------------------------------------------------------------------
-; Old stories - *put an asterisk on end to color as old stories
-;--------------------------------------------------------------------------------
 --------------	------------	-1540.S3 ------------------------------------------
 BL1398	[artf936135]	ITG 142943: Special Characters in Reference fields*
 BL1372	[artf922350]	ITG 142943: Auto-refresh does not affect map zooming*
