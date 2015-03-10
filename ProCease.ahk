@@ -1,5 +1,6 @@
 #SingleInstance force
 SetBatchLines, -1
+SetTitleMatchMode, 3
 
 #Include Class_LV_Colors.ahk
 
@@ -8,19 +9,19 @@ SetBatchLines, -1
 ;=============================================================================================================================
 
 ; Set the appropriate app title
-QC_TITLE               := "HP Application Lifecycle Management" ; for stand-alone QC app
-;QC_TITLE              := "HP ALM - Quality Center 11.00"       ; for browser QC Approvals
+QC_TITLE              := "HP Application Lifecycle Management" ; for stand-alone QC app
+;QC_TITLE               := "HP ALM - Quality Center 11.00"       ; for browser QC Approvals
 
 ; This will be included in the commit
 DEV_NAME               := "Scott"
 
 ; The version the defect is assigned to and being fixed for. It will change per release.
-VER_ASSIGNED_TO        := "WSAW1580"
+VER_ASSIGNED_TO        := "WSAW1640"
 ; Target release Value
-TARGET_RELEASE         := "OL1410 Oct"
+TARGET_RELEASE         := "OL1504 Apr"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
 ; e.g., ReleaseXX.SprintXX.BuildXX...WSAW1500.S1.02
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.HS.03
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S1.03
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "Defect #"
 
@@ -39,6 +40,7 @@ DEFAULT_ARTIFACT       := ""
 TEAM_ROOT_CAUSE        := "WSAW-Dev"
 TEAM_RETURNED          := "WSAW-SQA-Testing"
 
+ADDITIONAL_CATEGORY_1  := "CUSTAPP HTML" ; This may change in future.
 STATUS_FIXED           := "Fixed"
 STATUS_RETURNED        := "Returned"
 
@@ -67,8 +69,6 @@ Menu, Tray, Icon, ProCease.ico
 ;******************************************************************************************************************************
 ; BEGIN Main program body
 ;******************************************************************************************************************************
-
-SetTitleMatchMode, 3 ; 3=Match title exactly
 
 ; Add the variable defined above into the group of windows to wait for
 GroupAdd, waitOnThese, %POP_DEF_DETAILS%
@@ -357,7 +357,7 @@ FindDefect(defectNum)
 
    WaitFor(QC_TITLE)
 
-   MouseClick, left, 106, 190
+   MouseClick, right, 106, 190
    Send, !g
    Sleep, STEP_SLEEP
 
@@ -387,7 +387,7 @@ FixDefect(pcv, atv)
 
    ; Additional Info tab
    SetPlannedClosingVersion(pcv)
-   SetAdditionalCategory1("CUSTAPP FLEX") ; make parameter?
+   SetAdditionalCategory1(ADDITIONAL_CATEGORY_1) ; make parameter?
 
    ; Closing Info tab
    SetDefectType(DEFECT_TYPE)
@@ -663,3 +663,4 @@ SelectAll()
 id := GetClipboard()
 FindDefect(id)
 Return
+
