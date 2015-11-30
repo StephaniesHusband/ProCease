@@ -16,12 +16,12 @@ QC_TITLE              := "HP Application Lifecycle Management" ; for stand-alone
 DEV_NAME               := "Scott"
 
 ; The version the defect is assigned to and being fixed for. It will change per release.
-VER_ASSIGNED_TO        := "WSAW1640"
+VER_ASSIGNED_TO        := "WSAW1720"
 ; Target release Value
-TARGET_RELEASE         := "OL1504 Apr"
+TARGET_RELEASE         := "OL1512 Dec"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
 ; e.g., ReleaseXX.SprintXX.BuildXX...WSAW1500.S1.02
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S1.03
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S2.02
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "Defect #"
 
@@ -34,13 +34,15 @@ FILE_ARTIFACTS         := "artifacts.txt"
 ; Default artifact you would like selected for every commit. Leave empty to force a manual choice.
 DEFAULT_ARTIFACT       := ""
 
+EXTRA_FIELDS           := 1
+
 ;------------------------------------------
 ; Customizable but, probably will not vary
 ;------------------------------------------
 TEAM_ROOT_CAUSE        := "WSAW-Dev"
 TEAM_RETURNED          := "WSAW-SQA-Testing"
 
-ADDITIONAL_CATEGORY_1  := "CUSTAPP HTML" ; This may change in future.
+ADDITIONAL_CATEGORY_1  := "WSAWUI Redesign"
 STATUS_FIXED           := "Fixed"
 STATUS_RETURNED        := "Returned"
 
@@ -119,6 +121,7 @@ ClipDefectNumber()
    WaitFor(POP_DEF_DETAILS)
 
    ; double click to select all
+   ;MouseClick, left, 105, 73, 2
    MouseClick, left, 90, 77, 2
 
    Sleep, STEP_SLEEP
@@ -148,7 +151,10 @@ GoToTab(tabName)
    Else If (tabName = TAB_TCOM)
       x = 570
 
+   ;x := x + 20
+
    MouseClick, left, x, 110
+   ;MouseClick, left, x, 127
    Sleep STEP_SLEEP
 }
 
@@ -172,7 +178,7 @@ SetAssignedTo(id)
 
    WaitFor(POP_DEF_DETAILS)
    GoToTab(TAB_DET)
-   SendInput, {TAB 11}
+   SendInput, {TAB 10}
    SelectAll()
    SendInput, %id%
    Sleep, STEP_SLEEP
@@ -187,7 +193,7 @@ SetTeamAssigned(team)
 
    WaitFor(POP_DEF_DETAILS)
    GoToTab(TAB_DET)
-   SendInput, {TAB 9}
+   SendInput, {TAB 8}
    SelectAll()
    SendInput, %team%
    Sleep, STEP_SLEEP
@@ -202,7 +208,7 @@ SetDefectStatus(status)
 
    WaitFor(POP_DEF_DETAILS)
    GoToTab(TAB_DET)
-   SendInput, {TAB 4}
+   SendInput, {TAB 3}
    SelectAll()
    SendInput, %status%
    Sleep, STEP_SLEEP
@@ -217,7 +223,7 @@ SetTargetRelease(release)
 
    WaitFor(POP_DEF_DETAILS)
    GoToTab(TAB_DET)
-   SendInput, {TAB 12}
+   SendInput, {TAB 11}
    SelectAll()
    SendInput, %release%
    Sleep, STEP_SLEEP
