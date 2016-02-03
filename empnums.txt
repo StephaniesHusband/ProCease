@@ -2,8 +2,11 @@ Myself	263952	WSAW-Dev
 Heier	763341	WSAW-Dev
 Ankit	967837	WSAW-Dev
 Aditya	5030763	WSAW-Dev
+Deep	5103706	WSAW-Dev
+Nikhar	5034863	WSAW-Dev
 Quinn	5087903	WSAW-Dev
-Tahmoores	5103466	WSAW-Dev
+Rushi	5095520	WSAW-Dev
+Tah's	5103466	WSAW-Dev
 ----------------------------------
 Tracy	927709	WSAW-RDA
 ScottC	567163	WSAW-RDA
