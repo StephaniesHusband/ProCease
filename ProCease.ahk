@@ -16,21 +16,17 @@ QC_TITLE              := "HP Application Lifecycle Management" ; for stand-alone
 DEV_NAME               := "Scott"
 
 ; The version the defect is assigned to and being fixed for. It will change per release.
-VER_ASSIGNED_TO        := "WSAW1720"
+VER_ASSIGNED_TO        := "WSAW1740"
 ; Target release Value
-TARGET_RELEASE         := "OL1512 Dec"
+TARGET_RELEASE         := "OL1604 Apr"
 ; The defect planned closing version. It will be the current release, current sprint, etc. It will change per sprint.
 ; e.g., ReleaseXX.SprintXX.BuildXX...WSAW1500.S1.02
-VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S2.02
+VER_PLANNED_CLOSING     = %VER_ASSIGNED_TO%.S1.03
 ; Prefix for defects. Make this whatever you prefer (e.g., Defect #XXXXXX)
 DEFECT_PREFIX          := "Defect #"
 
 ; How long to wait in between execution steps (in milliseconds)
 STEP_SLEEP             := 800
-; File name for the employee names, #'s, workgroups that you might want to reassign/return a defect to.
-FILE_EMPLOYEE_IDS      := "empNums.txt"
-; File name for the list of artifacts/stories that you are currently working on and would commit changes to.
-FILE_ARTIFACTS         := "artifacts.txt"
 ; Default artifact you would like selected for every commit. Leave empty to force a manual choice.
 DEFAULT_ARTIFACT       := ""
 
@@ -39,6 +35,12 @@ EXTRA_FIELDS           := 1
 ;------------------------------------------
 ; Customizable but, probably will not vary
 ;------------------------------------------
+; File name for the employee names, #'s, workgroups that you might want to reassign/return a defect to.
+FILE_EMPLOYEE_IDS      := "empNums.txt"
+
+; File name for the list of artifacts/stories that you are currently working on and would commit changes to.
+FILE_ARTIFACTS         := "artifacts.txt"
+
 TEAM_ROOT_CAUSE        := "WSAW-Dev"
 TEAM_RETURNED          := "WSAW-SQA-Testing"
 
